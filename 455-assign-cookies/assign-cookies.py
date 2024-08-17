@@ -10,10 +10,6 @@ class Solution:
             if g[i] <= s[j]:
                 ans += 1
                 i += 1
-                j += 1
-            elif g[i] > s[j]:
-                j += 1
-            else:
-                i += 1
+            j += 1  
 
         return ans
