@@ -7,10 +7,7 @@ class Solution(object):
         :rtype: bool
         """
         cleaned_text = re.sub(r'[^a-zA-Z0-9]', '', s).lower()
-        if cleaned_text[::-1] == cleaned_text:
-            return True
-        else:
-            return False
+        return cleaned_text == cleaned_text[::-1]   
         
 
         
