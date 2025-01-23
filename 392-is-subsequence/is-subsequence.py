@@ -1,11 +1,20 @@
 class Solution:
     def isSubsequence(self, s: str, t: str) -> bool:
-        a, b = 0, 0
-        A, B = len(s), len(t)
+        i, j = 0, 0
+        a = len(s)
+        b = len(t)
+        score = 0
+
+        while i < a and j < b:
+            if s[i] == t[j]:
+                i += 1
+                j += 1
+                score += 1
+            else:
+                j += 1
+
+        if score < a:
+            return False
+        elif score == a:
+            return True
         
-        while a < A and b < B:
-            if s[a] == t[b]:
-                a += 1 
-            b += 1  
-        
-        return a == A  
